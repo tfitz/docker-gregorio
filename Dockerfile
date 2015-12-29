@@ -11,7 +11,8 @@ RUN apt-get update && apt-get install -y \
     git \
     libltdl7-dev \
     texlive-full
-    
+
+RUN apt-get clean    
 
 RUN git clone --depth 1 -b develop https://github.com/gregorio-project/gregorio.git /gregorio-git
 
