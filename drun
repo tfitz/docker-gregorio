@@ -3,8 +3,9 @@
 cwd=$( pwd )
 
 docker run \
+       -it \
        --rm=true \
        -v $cwd:/workdir \
        gregorio \
-       sh -c "gregorio $@"
+       "$@"
 

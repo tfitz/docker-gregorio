@@ -16,11 +16,9 @@ RUN apt-get clean
 
 RUN git clone --depth 1 -b develop https://github.com/gregorio-project/gregorio.git /gregorio-git
 
-#CD /gregorio-git
-#RUN ./build.sh --force=autoreconf &&
-    
+WORKDIR /gregorio-git
+RUN ./build.sh && ./install.sh && make clean
 
 WORKDIR "/workdir"
 
-# ENTRYPOINT ["gregorio"]
 
